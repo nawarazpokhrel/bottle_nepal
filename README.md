@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Bottle Nepal Task]]
+[[Bottle Nepal Task]]
 
 
 
