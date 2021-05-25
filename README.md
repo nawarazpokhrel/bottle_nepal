@@ -7,9 +7,9 @@
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [Python]()
+* [Django]()
+* [Django Rest Framework]()
 
 
 
@@ -20,7 +20,7 @@
   pip install django
   ```
 
-## API documentation
+## API documentation For api documentation with swagger use following link
   ```sh
   localhost/api/docs
   ```
@@ -32,7 +32,7 @@
 1. Clone the repo
    ```sh
    https://github.com/nawarazpokhrel/bottle_nepal
-2. Install Requrements Files for project
+2. Install Requrements Files for project using following command
    ```sh
    pip install -r requirments.txt
    ```
