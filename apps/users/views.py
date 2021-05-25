@@ -8,6 +8,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from apps.users import usecases, serializers
+from apps.users.models import SubscribeEmail
 from bottle_nepal.settings import SECRET_KEY
 
 User = get_user_model()
@@ -41,11 +42,11 @@ class RegisterUserView(CreateAPIView):
             request=self.request
         ).execute()
 
-    # def create(self, request, *args, **kwargs):
-    #     serializer = self.get_serializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     self.perform_create(serializer)
-    #     return Response('User Created Check Your Email', status=status.HTTP_201_CREATED)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return Response({'created':'User Created Check Your Email'}, status=status.HTTP_201_CREATED)
 
 
 class VerifyEmailView(generics.GenericAPIView):
@@ -64,10 +65,9 @@ class VerifyEmailView(generics.GenericAPIView):
             # get the user that sent the payload
             user = User.objects.get(id=payload['user_id'])
             # now verify the user
-            if not user.is_verified:
-                user.is_verified = True
-                user.save()
-            return Response({'email': 'Successfully activated'}, status=status.HTTP_200_OK)
+            subscribe_email = SubscribeEmail(user=user)
+            subscribe_email.save()
+            return Response({'email': 'Successfully subscribed'}, status=status.HTTP_200_OK)
         # raise exceptions if token expired
         except jwt.ExpiredSignatureError as e:
             return Response({'error': 'Activations link expired'}, status=status.HTTP_400_BAD_REQUEST)

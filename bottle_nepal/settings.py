@@ -129,3 +129,11 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
+EMAIL_USE_SSL = True
+EMAIL_PORT = 465
+EMAIL_HOST = 'pro.turbo-smtp.com'
+# EMAIL_PORT = 587
+
+# These are testing emails
+EMAIL_HOST_USER = 'nabaraj@tripnp.com '
+EMAIL_HOST_PASSWORD = 'OC7dcYhL'

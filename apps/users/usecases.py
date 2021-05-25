@@ -21,6 +21,7 @@ class RegisterUserUseCase:
 
     def execute(self):
         self._factory()
+        self._send_email()
 
     def _factory(self):
         password = self._data.pop('password')
@@ -50,7 +51,7 @@ class RegisterUserUseCase:
             'user': self._user.username,
             'token': absolute_url
         }
-        # ConfirmationEmail(context=self.context).send(to=[self._user.email])
+        ConfirmationEmail(context=self.context).send(to=[self._user.email])
 
 
 
