@@ -1,15 +1,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Bottle Nepal Task][product-screenshot]](https://example.com)
+[![Bottle Nepal Task]]
 
 
 
 ### Built With
 
-* [Python]()
-* [Django]()
-* [Django Rest Framework]()
+* [Python](https://www.python.org/)
+* [Django](https://docs.djangoproject.com/en/3.2/)
+* [Django Rest Framework](https://www.django-rest-framework.org/)
 
 
 
