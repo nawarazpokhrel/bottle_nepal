@@ -10,7 +10,7 @@ urlpatterns = [
     ),
     path(
         'activate-by-email',
-        views.VerifyEmailView.as_view(),
+        views.VerifyEmailAndSubscribeEmailView.as_view(),
         name='activate-by-email'
     ),
 ]

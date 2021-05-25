@@ -49,7 +49,7 @@ class RegisterUserView(CreateAPIView):
         return Response({'created':'User Created Check Your Email'}, status=status.HTTP_201_CREATED)
 
 
-class VerifyEmailView(generics.GenericAPIView):
+class VerifyEmailAndSubscribeEmailView(generics.GenericAPIView):
     """
     Use this to verify user email
     """
