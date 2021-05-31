@@ -130,11 +130,22 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
-EMAIL_USE_SSL = True
-EMAIL_PORT = 465
-EMAIL_HOST = 'pro.turbo-smtp.com'
-# EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'moonsoonrain35@gmail.com'
+
+EMAIL_HOST_PASSWORD = '23Oct1996'
 
 # These are testing emails
-EMAIL_HOST_USER = 'nabaraj@tripnp.com '
-EMAIL_HOST_PASSWORD = 'OC7dcYhL'
+# EMAIL_HOST_USER = 'moonsoonrain35@gmail.com'
+# EMAIL_HOST_PASSWORD = '23Oct1996'
+
+
+CELERY_TIMEZONE = "Asia/Kathmandu"
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_STORE_ERRORS_EVEN_IF_IGNORED = True
