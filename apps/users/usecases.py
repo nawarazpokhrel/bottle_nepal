@@ -5,6 +5,7 @@ from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from apps.users.email import ConfirmationEmail
+from bottle_nepal.tasks import send_email
 
 User = get_user_model()
 
@@ -39,7 +40,6 @@ class RegisterUserUseCase:
             raise ValidationError('User does not exists')
 
     def _send_email(self):
-
         token = RefreshToken.for_user(user=self.user_instance).access_token
         # get current site
         current_site = get_current_site(self._request).domain
@@ -51,7 +51,6 @@ class RegisterUserUseCase:
             'user': self._user.username,
             'token': absolute_url
         }
-        ConfirmationEmail(context=self.context).send(to=[self._user.email])
-
-
+        receipent = self._user.email
+        send_email.delay(receipent, **self.context)
 
