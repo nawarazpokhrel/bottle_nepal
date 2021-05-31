@@ -36,6 +36,7 @@
    ```sh
    pip install -r requirments.txt
    ```
+3. Objective of Task was simply to check if user email exists in database if exists raise error else send subscription email to user to be subscribed.
 
 
 
