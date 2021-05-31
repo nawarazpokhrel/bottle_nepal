@@ -2,6 +2,9 @@
 ## About The Project
 
 ## Bottle Nepal Task
+### Objective of project
+    Objective of  Task was simply to check if user email exists in database if exists raise error else send subscription email to user to be subscribed.
+
 
 
 
@@ -36,8 +39,6 @@
    ```sh
    pip install -r requirments.txt
    ```
-### Objective of project
-    Objective of  Task was simply to check if user email exists in database if exists raise error else send subscription email to user to be subscribed.
 
 
 
